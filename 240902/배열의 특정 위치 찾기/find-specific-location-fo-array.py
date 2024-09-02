@@ -14,4 +14,4 @@ for i in range(n):
         
 avg /= cnt
 
-print(sum, avg)
+print(sum, f"{avg:.1f}")
