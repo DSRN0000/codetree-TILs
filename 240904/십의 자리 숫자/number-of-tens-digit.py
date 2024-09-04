@@ -3,6 +3,8 @@ arr = [0] * 10
 num_arr = list(map(int, input().split()))
 
 for i in num_arr:
+    if i == 0:
+        break
     num = i // 10
     arr[num] += 1
 
