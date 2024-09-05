@@ -1,4 +1,5 @@
 arr = [0] * 5
+
 for _ in range(3):
     s, t = input().split()
     t = int(t)
@@ -6,9 +7,9 @@ for _ in range(3):
     if s == "Y" and t >= 37:
         num = 1
     if s == "Y" and t < 37:
-        num = 2
-    if s == "N" and t >= 37:
         num = 3
+    if s == "N" and t >= 37:
+        num = 2
     if s == "N" and t < 37:
         num = 4
     
