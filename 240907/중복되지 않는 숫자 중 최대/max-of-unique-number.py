@@ -8,5 +8,7 @@ for i in arr:
 for j in range(1000, 0, -1):
     if 1 not in arr_count:
         print(-1)
+        break
     if arr_count[j] == 1:
         print(j)
+        break
