@@ -5,10 +5,10 @@ arr = [0] * 10
 a, b = map(int, input().split())
 result = 0
 
-while(a >= 1):
-    a = a // b
+while(a > 1):
     arr[a % b] += 1
+    a = a // b
 
 for i in range(10):
-    result += arr[i] ** 2 
+    result += arr[i] ** 2
 print(result)
