@@ -1,14 +1,12 @@
 n = int(input())
 arr = list(map(int, input().split()))
-arr_min = 2 ** 31
-arr_max = 1
+max_profit = 0
         
-for i in arr:
-    if arr_min > i:
-        arr_min = i
+for i in range(n):
+    for j in range(i + 1, n):
+        result = arr[j] - arr[i]
 
-for j in arr[arr.index(arr_min): ]:
-    if arr_max < j:
-        arr_max = j
-        
-print(arr_max - arr_min)
+        if max_profit < result:
+            max_profit = result
+
+print(max_profit)
