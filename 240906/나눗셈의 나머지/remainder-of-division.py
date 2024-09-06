@@ -5,7 +5,7 @@ arr = [0] * 10
 a, b = map(int, input().split())
 result = 0
 
-while(a > 1):
+while(a >= 1):
     a = a // b
     arr[a % b] += 1
 
