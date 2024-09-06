@@ -6,5 +6,7 @@ for i in arr:
     arr_count[i] += 1
 
 for j in range(1000, 0, -1):
+    if 1 not in arr_count:
+        print(-1)
     if arr_count[j] == 1:
         print(j)
