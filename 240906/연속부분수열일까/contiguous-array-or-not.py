@@ -8,7 +8,7 @@ for i in range(b):
         num = a_arr.index(b_arr[i])
         for j in range(num+1, l):
             k = i
-            if a_arr[j] == b_arr[k]:
+            if a_arr[j] == b_arr[k] and k <= b:
                 cnt += 1
                 k += 1
             else:
