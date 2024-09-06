@@ -1,7 +1,8 @@
+import sys
+
 a, b = map(int, input().split())
 a_arr = list(map(int, input().split()))
 b_arr = list(map(int, input().split()))
-cnt = 0
 
 for i in range(a):
     success = True
