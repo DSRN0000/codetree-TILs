@@ -3,7 +3,7 @@ arr = list(map(int, input().split()))
 
 num = 101
 
-for i in range(n):
+for i in range(n - 1):
     for j in range(i + 1, n):
         if j - i < num:
             num = j - i
