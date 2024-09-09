@@ -7,11 +7,11 @@ arr1 = [
 
 arr2 = [
     list(map(int, input().split()))
-    for _ in range(n)
+    for _ in range(m)
 ]
 
 arr3 = [
-    [0] * m for _ in range(n)
+    [0] * m for _ in range(m)
 ]
 
 for i in range(m):
