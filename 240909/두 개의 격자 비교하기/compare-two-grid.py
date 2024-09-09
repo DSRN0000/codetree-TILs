@@ -18,8 +18,5 @@ for i in range(m):
     for j in range(n):
         if arr1[i][j] != arr2[i][j]:
             arr3[i][j] = 1
-
-for a in arr3:
-    for b in a:
-        print(b, end = " ")
+        print(arr3[i][j], end = " ")
     print()
