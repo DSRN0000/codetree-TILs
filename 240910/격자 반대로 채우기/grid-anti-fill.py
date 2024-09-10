@@ -5,9 +5,9 @@ arr = [
 ]
 
 number = 1
-curr_row = n - 1 
+curr_row = n - 1
 curr_col = n
-while(0 <= curr_row and 0 <= curr_col):
+while(0 <= curr_row):
 
     if curr_col == n:
         for _ in range(n):
@@ -15,7 +15,10 @@ while(0 <= curr_row and 0 <= curr_col):
             arr[curr_col][curr_row] = number
             number += 1
         curr_row -= 1
-        
+
+    if curr_row < 0:
+        break
+    
     if curr_col == 0:
         for _ in range(n):
             arr[curr_col][curr_row] = number
