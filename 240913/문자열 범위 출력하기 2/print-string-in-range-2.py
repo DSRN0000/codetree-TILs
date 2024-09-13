@@ -6,4 +6,4 @@ if len_a >= n:
         print(a[i], end="")
 if len_a < n:
     for j in range(len_a - 1, -1, -1):
-        print(a[j])
+        print(a[j], end ="")
