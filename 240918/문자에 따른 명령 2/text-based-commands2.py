@@ -5,12 +5,12 @@ dx, dy = [0,1,0,-1], [1,0,-1,0]
 _input = input()
 len__input = len(_input)
 
-for i in range(len__input):
-    if _input[i] == 'L':
-        direction -= 1
-    elif _input[i] == 'R':
-        direction += 1
-    if _input[i] == 'F':
+for i in _input:
+    if i == 'L':
+        direction = (direction - 1 + 4) % 4
+    elif i == 'R':
+        direction = (direction + 1) % 4
+    if i == 'F':
         x = x + dx[direction]
         y = y + dy[direction]
 print(x, y)
