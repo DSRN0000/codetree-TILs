@@ -5,16 +5,11 @@ public class Main {
         // 여기에 코드를 작성해주세요.
 
         Scanner sc = new Scanner(System.in);
-        String c = sc.next();
+        char c = sc.next().charAt(0);
         double a = sc.nextDouble();
         double b = sc.nextDouble();
 
-        double result_a = Math.round(a * 100) / 100.0;
-        double result_b = Math.round(b * 100) / 100.0;
-
         System.out.println(c);
-        System.out.println(result_a);
-        System.out.println(result_b);
-
+        System.out.printf("%.2f\n%.2f",a,b);
     }
 }
