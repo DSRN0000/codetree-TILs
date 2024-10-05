@@ -5,8 +5,8 @@ public class Main {
         int n = sc.nextInt();
 
         for (int i = n; i > 0; i--) {
-            for (int j = n;  j> 0; j--) {
-                System.out.print("(%d,%d)", i, j);
+            for (int j = n;  j > 0; j--) {
+                System.out.printf("(%d,%d) ", i, j);
             }
             System.out.println();
         }
