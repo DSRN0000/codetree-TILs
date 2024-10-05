@@ -9,15 +9,16 @@ public class Main {
                 if (j % 2 == 0) {
                     if(i == 0)
                         System.out.print("* ");
+
                     if(i != 0)
-                        System.out.print(" ");
+                        System.out.print("  ");
                 }
                 if (j % 2 != 0) {
                     if (i <= j) 
                         System.out.print("* ");
                     
                     if (i > j) 
-                        System.out.print(" ");
+                        System.out.print("  ");
                 }
             }
             System.out.println();
