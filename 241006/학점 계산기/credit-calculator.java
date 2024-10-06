@@ -13,9 +13,9 @@ public class Main {
         double avg = sum / n;
         System.out.printf("%.1f\n", avg);
 
-        if (4.0 < avg) {
+        if (4.0 <= avg) {
             System.out.println("Perfect");
-        } else if (3.0 < avg && avg < 4.0) {
+        } else if (3.0 <= avg && avg < 4.0) {
             System.out.println("Good");
         } else {
             System.out.println("Poor");
