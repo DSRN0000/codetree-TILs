@@ -7,6 +7,10 @@ public class Main {
 
         for (int i = n; i > 0; i--) {
             for (int j = 0; j <= n - i; j++) {
+
+                if ((int)'Z' < x) {
+                    x = (int) 'A';
+                }
                 System.out.print((char)x);
                 x++;
             }
