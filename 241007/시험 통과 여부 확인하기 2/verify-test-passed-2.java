@@ -10,8 +10,8 @@ public class Main {
             int sum = 0;
 
             for (int j = 0; j < 4; j++) {
-                scores[i] = sc.nextInt();
-                sum += scores[i];
+                scores[j] = sc.nextInt();
+                sum += scores[j];
             }
 
             int avg = sum / 4;
