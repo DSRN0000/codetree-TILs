@@ -10,7 +10,7 @@ public class Main {
             num[i] = sc.nextInt();
         }
 
-        for (int i = n - 1; i > 0; i--) {
+        for (int i = n - 1; i >= 0; i--) {
             if (num[i] % 2 == 0) {
                 System.out.print(num[i] + " ");
             }
