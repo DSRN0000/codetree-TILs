@@ -6,8 +6,8 @@ public class Main {
 
         for (int i = 0; i < 10; i++) {
             int n = sc.nextInt();
-            if (max < arr)
-                max = arr;
+            if (max < a)
+                max = a;
         }
 
         System.out.println(max);
