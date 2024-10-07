@@ -9,7 +9,6 @@ public class Main {
         for (int i = 0; i < 6; i++) {
             if (arr[i] == s) 
                 idx = i;
-                break;
         }
 
         if (idx == -1)
