@@ -32,6 +32,10 @@ public class Main {
 
 			arr[x][y] = (char) num;
 			num += 1;
+
+			if ((int)'Z' < num) {
+				num = (int)'A';
+			}
 		}
 
 		for (int i = 0; i < n; i++) {
