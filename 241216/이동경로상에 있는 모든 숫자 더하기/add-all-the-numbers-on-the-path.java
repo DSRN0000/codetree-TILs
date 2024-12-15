@@ -44,8 +44,8 @@ public class Main {
 
         x = n / 2;
         y = n / 2;
-        answer += arr[x][y];
-        arr[x][y] = 0;
+        // answer += arr[x][y];
+        // arr[x][y] = 0;
         for (int i = 0; i < t; i++) {
             direction(s.charAt(i));
             answer += arr[x][y];
