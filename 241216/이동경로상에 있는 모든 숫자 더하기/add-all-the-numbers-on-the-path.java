@@ -10,9 +10,6 @@ public class Main {
     }
 
     private static void direction(char d) {
-        int nx = x;
-        int ny = y;
-
         if (d == 'L') {
             dirNum = (dirNum - 1 + 4) % 4;
         }
@@ -20,8 +17,8 @@ public class Main {
             dirNum = (dirNum + 1) % 4;
         }
         if (d == 'F') {
-            nx = x + dx[dirNum];
-            ny = y + dy[dirNum];
+            int nx = x + dx[dirNum];
+            int ny = y + dy[dirNum];
             if (isRange(nx, ny)) {
                 x = nx;
                 y = ny;
@@ -44,8 +41,9 @@ public class Main {
 
         x = n / 2;
         y = n / 2;
-        // answer += arr[x][y];
-        // arr[x][y] = 0;
+        answer += arr[x][y];
+        arr[x][y] = 0;
+        
         for (int i = 0; i < t; i++) {
             direction(s.charAt(i));
             answer += arr[x][y];
