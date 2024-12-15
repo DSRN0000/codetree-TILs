@@ -2,7 +2,6 @@ import java.util.*;
 public class Main {
     private static int x, y, n, t, dirNum, answer;
     private static int[][] arr;
-    // private static string [] s;
     private static int[] dx = new int[]{-1, 0, 1, 0};
     private static int[] dy = new int[]{0, 1, 0, -1};
 
@@ -69,5 +68,11 @@ public class Main {
         //     }
         //     System.out.println();
         // }
+
+        // 12345
+        // 67891
+        // 23456
+        // 78912
+        // 34567
     }
 }
