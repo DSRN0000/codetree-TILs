@@ -13,10 +13,10 @@ public class Main {
         if (d == 'L') {
             dirNum = (dirNum - 1 + 4) % 4;
         }
-        if (d == 'R') {
+        else if (d == 'R') {
             dirNum = (dirNum + 1) % 4;
         }
-        if (d == 'F') {
+        else if (d == 'F') {
             int nx = x + dx[dirNum];
             int ny = y + dy[dirNum];
             if (isRange(nx, ny)) {
@@ -27,7 +27,9 @@ public class Main {
     }
     
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+
         n = sc.nextInt();
         t = sc.nextInt();
         arr = new int[n][n];
@@ -43,34 +45,14 @@ public class Main {
         y = n / 2;
         answer += arr[x][y];
         arr[x][y] = 0;
-        
+
         for (int i = 0; i < t; i++) {
-            direction(s.charAt(i));
+            char c = s.charAt(i);
+            direction(c);
             answer += arr[x][y];
-            // System.out.println("x = " + x + " " + "y = " + y);
-            // System.out.println(answer);
             arr[x][y] = 0;
         }
-
-        // System.out.println("========");
         System.out.println(answer);
 
-        // for(int i = 0; i < t; i++) {
-        //     System.out.println(s.charAt(i));
-        // } 
-
-
-        // for(int i = 0; i < n; i++) {
-        //     for (int j = 0; j < n; j++) {
-        //         System.out.print(arr[i][j] + " ");
-        //     }
-        //     System.out.println();
-        // }
-
-        // 12345
-        // 67891
-        // 23456
-        // 78912
-        // 34567
     }
 }
