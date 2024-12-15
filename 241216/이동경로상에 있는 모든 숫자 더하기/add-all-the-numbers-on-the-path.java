@@ -10,8 +10,8 @@ public class Main {
     }
 
     private static void direction(char d) {
-        int nx = 0;
-        int ny = 0;
+        int nx = x;
+        int ny = y;
 
         if (d == 'L') {
             dirNum = (dirNum - 1 + 4) % 4;
@@ -20,8 +20,8 @@ public class Main {
             dirNum = (dirNum + 1) % 4;
         }
         if (d == 'F') {
-            nx += x + dx[dirNum];
-            ny += y + dy[dirNum];
+            nx = x + dx[dirNum];
+            ny = y + dy[dirNum];
             if (isRange(nx, ny)) {
                 x = nx;
                 y = ny;
