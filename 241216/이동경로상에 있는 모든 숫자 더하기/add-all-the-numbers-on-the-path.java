@@ -1,6 +1,6 @@
 import java.util.*;
 public class Main {
-    private static int x, y, n, t, dirNum, answer;
+    private static int x, y, n, t, dirNum, answer, nx, ny;
     private static int[][] arr;
     private static int[] dx = new int[]{-1, 0, 1, 0};
     private static int[] dy = new int[]{0, 1, 0, -1};
@@ -17,8 +17,8 @@ public class Main {
             dirNum = (dirNum + 1) % 4;
         }
         if (d == 'F') {
-            int nx = x + dx[dirNum];
-            int ny = y + dy[dirNum];
+            nx = x + dx[dirNum];
+            ny = y + dy[dirNum];
             if (isRange(nx, ny)) {
                 x = nx;
                 y = ny;
@@ -49,7 +49,10 @@ public class Main {
             char c = s.charAt(i);
             if (c == 'F') {
                 direction(c);
-                answer += arr[x][y];
+                if (isRange(nx, ny)) {
+                    answer += arr[x][y];
+                }
+                
             }
             else if (c != 'F') {
                 direction(c);
