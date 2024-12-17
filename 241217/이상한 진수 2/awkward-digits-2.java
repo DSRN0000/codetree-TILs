@@ -10,11 +10,12 @@ public class Main {
             if (s.charAt(i) == '0') {
                 cnt += 1;
                 s = s.substring(0, i) + '1' + s.substring(i + 1);
+
                 break;
             }
         }
         if (cnt == 0) {
-            s = s.substring(s.length() - 1) + '0';
+            s = s.substring(0, s.length() - 1) + '0';
         }
         int result = Integer.parseInt(s, 2);
 
