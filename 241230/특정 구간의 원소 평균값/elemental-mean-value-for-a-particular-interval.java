@@ -21,12 +21,10 @@ public class Main {
 
                 boolean exists = false;
                 for (int l = i; l <= j; l++) {
-                    if (avg == arr[l]) {
+                    if (exists == false && avg == arr[l]) {
                         exists = true;
+                        result += 1;
                     }
-                }
-                if (exists) {
-                    result += 1;
                 }
             }
         }
