@@ -1,39 +1,35 @@
-import java.util.*;
+import java.util.Scanner;
+
 public class Main {
+    public static final int MAX_NUM = 10000;
+
+    public static int n, k;
+    public static int[] arr = new int[MAX_NUM + 1];
+    
     public static void main(String[] args) {
-        // n명의 사람들 , 크기 : k , g -> 1점 , h -> 2점
-        // 사진을 찍어 얻을 수 있는 최대 점수를 구하기
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int k = sc.nextInt();
 
-        int[] arr1 = new int[n];
-        char[] arr2 = new char[n];
-
-        for (int i = 0; i < n; i++) {
-            arr1[i] = sc.nextInt();
-            arr2[i] = sc.next().charAt(0);
+        n = sc.nextInt();
+        k = sc.nextInt();
+        for(int i = 0; i < n; i++) {
+            int x = sc.nextInt();
+            char c = sc.next().charAt(0);
+            
+            if(c == 'G')
+                arr[x] = 1;
+            else
+                arr[x] = 2;
         }
-
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) {
-                int dis = arr1[j] - arr1[i];
-                if (dis == k) {
-                    int sum = 0;
-                    for (int l = i; l <= j; l++) {
-                        if (arr2[l] == 'G') {
-                            sum += 1;
-                        }
-                        if (arr2[l] == 'H') {
-                            sum += 2;
-                        }
-                    }
-                    max = Math.max(max, sum);
-                }
-            }
+        
+        int maxSum = 0;
+        for(int i = 0; i <= MAX_NUM - k; i++) {
+            int sum = 0;
+            for(int j = i; j <= i + k; j++)
+                sum += arr[j];
+            
+            maxSum = Math.max(maxSum, sum);
         }
-
-        System.out.println(max);
+        
+        System.out.println(maxSum);
     }
 }
