@@ -35,6 +35,9 @@ public class Main {
                 }
             }
             answer = Math.min(answer, result);
+            if (result < t) {
+                answer = result;
+            }
         }
         System.out.println(answer);
     }
