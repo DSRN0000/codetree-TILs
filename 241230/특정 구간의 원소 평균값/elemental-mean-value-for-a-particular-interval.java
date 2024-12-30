@@ -11,23 +11,22 @@ public class Main {
 
         int result = 0;
         for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                int avg = 0;
+            for (int j = i; j < n; j++) {
                 int sum = 0;
-                int cnt = 0;
-
-                for (int k = i; k < j; k++) {
+                for (int k = i; k <= j; k++) {
                     sum += arr[k];
-                    cnt += 1;
                 }
 
-                avg = sum / cnt;
-                int count = 0;
-                for (int l = i; l < j; l++) {
-                    if (count == 0 && avg == arr[l]) {
-                        result += 1;
-                        count += 1;
+                double avg = (double)sum / (j - i + 1);
+
+                boolean exists = false;
+                for (int l = i; l <= j; l++) {
+                    if (avg == arr[l]) {
+                        exists = true;
                     }
+                }
+                if (exists) {
+                    result += 1;
                 }
             }
         }
