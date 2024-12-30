@@ -15,21 +15,23 @@ public class Main {
             arr2[i] = sc.next().charAt(0);
         }
 
-        int max = = Integer.MIN_VALUE;
-        for (int i = 0; i <= n - k; i++) {
-            int sum = 0;
-            int n = 0;
-            for (int j = i; j < i + k; j++) {
-                if (arr2[j] == 'G') {
-                    n = 1;
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                int dis = arr1[j] - arr1[i];
+                if (dis == k) {
+                    int sum = 0;
+                    for (int l = i; l <= j; l++) {
+                        if (arr2[l] == 'G') {
+                            sum += 1;
+                        }
+                        if (arr2[l] == 'H') {
+                            sum += 2;
+                        }
+                    }
+                    max = Math.max(max, sum);
                 }
-                if (arr2[j] == 'H') {
-                    n = 2;
-                }
-                sum = sum + arr1[j] * n;
             }
-
-            max = Math.max(max, min);
         }
 
         System.out.println(max);
