@@ -12,8 +12,9 @@ public class Main {
         }
 
         sum3 = sum3 - (sum1 + sum2);
+
         if (sum1 == sum2 && sum2 == sum3) {
-            return Integer.MAX_VALUE;
+            return 30000;
         }
 
         int max = Math.max(sum1, sum2);
@@ -38,6 +39,13 @@ public class Main {
                 }
             }
         }
-        System.out.println(answer);
+
+        if (answer == 30000) {
+            System.out.println(-1);
+        }
+        if (answer != 30000) {
+            System.out.println(answer);
+        }
+        
     }
 }
