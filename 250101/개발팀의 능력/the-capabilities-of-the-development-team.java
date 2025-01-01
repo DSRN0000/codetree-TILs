@@ -13,7 +13,7 @@ public class Main {
 
         sum3 = sum3 - (sum1 + sum2);
 
-        if (sum1 == sum2 && sum2 == sum3) {
+        if (sum1 == sum2 || sum2 == sum3) {
             return 30000;
         }
 
