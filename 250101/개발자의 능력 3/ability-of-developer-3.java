@@ -20,7 +20,7 @@ public class Main {
         int answer = Integer.MAX_VALUE;
         for (int i = 0; i < 4; i++) {
             for (int j = i + 1; j < 5; j++) {
-                for (int k = i + 2; k < 6; k++) {
+                for (int k = j + 1; k < 6; k++) {
                     answer = Math.min(answer, diff(i, j, k));
                 }
             }
