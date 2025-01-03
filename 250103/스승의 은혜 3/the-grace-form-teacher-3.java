@@ -15,19 +15,29 @@ public class Main {
         }
 
         int answer = Integer.MIN_VALUE;
+        int result = 0;
         for (int i = 0; i < n; i++) {
-            int result = (price[i] / 2) + t[i];
-            int cnt = 1;
-            int money = b - result;
+            int cnt = 0;
+            int money = b;
+            if (price[i] == 0) {
+                continue;
+            }
+            
+            else if (price[i] != 0) {
+                result = (price[i] / 2) + t[i];
+                cnt = 1;
+                money -= result;
+            }
 
             for (int j = 0; j < n; j++) {
-                if (i != j) {
+                if (i != j && price[j] != 0) {
                     result = sum[j];
+                    cnt += 1;
                     money -= result;
                 }
 
-                if (money >= 0) {
-                    cnt += 1;
+                if (money == 0) {
+                    break;
                 }
 
                 else if (money < 0) {
