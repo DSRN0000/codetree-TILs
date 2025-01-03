@@ -6,10 +6,12 @@ public class Main {
         int b = sc.nextInt();
         int[] price = new int[n];
         int[] t = new int[n];
+        int[] sum = new int[n];
 
         for (int i = 0; i < n; i++) {
             price[i] = sc.nextInt();
             t[i] = sc.nextInt();
+            sum[i] = price[i] + t[i];
         }
 
         int answer = Integer.MIN_VALUE;
@@ -20,7 +22,7 @@ public class Main {
 
             for (int j = 0; j < n; j++) {
                 if (i != j) {
-                    result = price[j] + t[j];
+                    result = sum[j];
                     money -= result;
                 }
 
@@ -32,7 +34,6 @@ public class Main {
                     cnt -= 1;
                     break;
                 }
-                
             }
             answer = Math.max(answer, cnt);
         }
