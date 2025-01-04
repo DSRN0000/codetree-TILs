@@ -1,36 +1,37 @@
-// 41분 14초 남음
-import java.util.*;
+import java.util.Scanner;
+
 public class Main {
+    public static final int INT_MAX = Integer.MAX_VALUE;
+    public static final int MAX_N = 100;
+
+    public static int n;
+    public static int[] x = new int[MAX_N];
+    public static int[] y = new int[MAX_N];
+
+    public static int area(int i, int j, int k) {
+        return Math.abs((x[i] * y[j] + x[j] * y[k] + x[k] * y[i]) - 
+                        (x[j] * y[i] + x[k] * y[j] + x[i] * y[k]));
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] x = new int[n];
-        int[] y = new int[n];
 
-        for (int i = 0; i < n; i++) {
+        n = sc.nextInt();
+
+        for(int i = 0; i < n; i++) {
             x[i] = sc.nextInt();
             y[i] = sc.nextInt();
         }
 
-        int answer = Integer.MIN_VALUE;
-        for (int i = 0; i < n; i++) {
-            int minx = Integer.MAX_VALUE;
-            int maxx = Integer.MIN_VALUE;
-            int miny = Integer.MAX_VALUE;
-            int maxy = Integer.MIN_VALUE;
-            for (int j = 0; j < n; j++) {
-                if (i != j) {
-                    minx = Math.min(minx, x[j]);
-                    maxx = Math.max(maxx, x[j]);
+        int maxArea = 0;
+        for(int i = 0; i < n; i++)
+            for(int j = i + 1; j < n; j++)
+                for(int k = j + 1; k < n; k++)
 
-                    miny = Math.min(miny, y[j]);
-                    maxy = Math.max(maxy, y[j]);
-                }
-            }
-
-            int result = (maxx - minx) * (maxy - miny);
-            answer = Math.max(answer, result);
-        } 
-        System.out.println(answer);
+                    if((x[i] == x[j] || x[i] == x[k] || x[j] == x[k]) &&
+                       (y[i] == y[j] || y[i] == y[k] || y[j] == y[k]))
+                        maxArea = Math.max(maxArea, area(i, j, k));
+        
+        System.out.println(maxArea);
     }
 }
