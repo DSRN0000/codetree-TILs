@@ -15,7 +15,7 @@ public class Main {
         }
 
         int maxCnt = Integer.MIN_VALUE;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < 3; i++) {
             arr[0] = arr[1] = arr[2] = 0;
 
             arr[i] = 1;
