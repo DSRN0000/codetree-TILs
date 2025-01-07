@@ -1,20 +1,31 @@
 import java.util.*;
 public class Main {
+    private static int n, k;
+    private static int[] arr;
+
+    private static int countNum(int l, int r) {
+        int cnt = 0;
+        for(int i = 0; i < n; i++) {
+            if(l <= arr[i] && arr[i] <= r) {
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int k = sc.nextInt();
-        int[] arr = new int[n];
+        n = sc.nextInt();
+        k = sc.nextInt();
+        arr = new int[n];
 
-        int answer = Integer.MIN_VALUE;
-        for (int i = 0; i < n - 1; i++) {
-            int cnt = 0;
-            for (int j = i + 1; j < n; j++) {
-                if (Math.abs(arr[i] - arr[j]) <= k) {
-                    cnt += 1;
-                }
-            }
-            answer = Math.max(answer, cnt);
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int answer = 0;
+        for (int i = 1; i < n; i++) {
+            answer = Math.max(answer, countNum(i, i + k));
         }
         System.out.println(answer);
     }
