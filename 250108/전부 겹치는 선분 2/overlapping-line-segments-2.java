@@ -1,32 +1,33 @@
 import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] arr1 = new int[n];
-        int[] arr2 = new int[n];
 
+        int[] x1 = new int[n];
+        int[] x2 = new int[n];
         for (int i = 0; i < n; i++) {
-            arr1[i] = sc.nextInt();
-            arr2[i] = sc.nextInt();
+            x1[i] = sc.nextInt();
+            x2[i] = sc.nextInt();
         }
 
-        String s = "NO";
+
+        String s = "No";
         for (int i = 0; i < n; i++) {
-            int cnt = 0;
+            int max = Integer.MIN_VALUE;
+            int min = Integer.MAX_VALUE;
             for (int j = 0; j < n; j++) {
-                for (int k = 0; k < n; k++) {
-                    if (i != j && i != k) {
-                        if (arr1[j] <= arr1[k] && arr2[k] <= arr2[j]) {
-                            cnt += 1;
-                        }
-                    }  
+                if (i == j) {
+                    continue;
                 }
+                max = Math.max(max, x1[j]);
+                min = Math.min(min, x2[j]);
             }
-            if (cnt == n - 1) {
+            if (min >= max) {
                 s = "Yes";
             }
         }
-        System.out.println(s);
+        System.out.print(s);
     }
 }
