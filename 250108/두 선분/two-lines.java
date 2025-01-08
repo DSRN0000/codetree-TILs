@@ -12,7 +12,7 @@ public class Main {
         String s = "nonintersecting";
         for (int i = x1; i <= x2; i++) {
             for (int j = x3; j <= x4; j++) {
-                if (x1 <= j || j <= x2) {
+                if (i == j) {
                     s = "intersecting";
                 }
             }
