@@ -13,60 +13,61 @@ public class Main {
         - 이동 가능? / 한다면 어디로?
         - 이동
 */
-    private static int n, x, y, rx, ry;
+    private static int n, x, y;
     private static int[][] arr;
+    private static ArrayList<Integer> arrList = new ArrayList<>();
     
     private static int[] dx = new int[]{1, -1, 0, 0};
     private static int[] dy = new int[]{0, 0, -1, 1};
 
-    private static boolean isRange(int x, int y) {
-        return (0 <= x && x < n && 0 <= y && y < n);
+    private static boolean isRange(int nx, int ny) {
+        return (1 <= nx && nx < n && 1 <= ny && ny < n);
     }
 
-    private static void move(int cx, int cy, int cnumber) {
+    private static boolean canGo(int nx, int ny, int cnumber){
+        return isRange(nx, ny) && arr[nx][ny] > cnumber;
+    }
 
-        int max = cnumber;
-
+    private static boolean move() {
         for (int i = 0; i < 4; i++) {
-            int nx = cx + dx[i];
-            int ny = cy + dy[i];
+            int nx = x + dx[i];
+            int ny = y + dy[i];
 
-            if (isRange(nx, ny) && arr[nx][ny] > max) {
-                max = arr[nx][ny];
-                rx = nx;
-                ry = ny;
-                break;
+            if (canGo(nx, ny, arr[x][y])) {
+                x = nx;
+                y = ny;
+                return true;
             }
         }
+        return false;
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        x = sc.nextInt() - 1;
-        y = sc.nextInt() - 1;
-        rx = x;
-        ry = y;
-        arr = new int[n][n];
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+        n = sc.nextInt();
+        x = sc.nextInt();
+        y = sc.nextInt();
+        arr = new int[n + 1][n + 1];
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
                 arr[i][j] = sc.nextInt();
             }
         }
+        arrList.add(arr[x][y]);
         
         while (true) {
-            System.out.print(arr[x][y] + " ");
+            boolean b = move();
 
-            move(x, y, arr[x][y]);
-
-            if (x == rx && y==ry) {
+            if (!b) {
                 break;
             }
+            arrList.add(arr[x][y]);
+        }
 
-            x = rx;
-            y = ry;
-            
+        for (int i = 0; i < arrList.size(); i++) {
+            System.out.print(arrList.get(i) + " ");
         }
     }
 }
