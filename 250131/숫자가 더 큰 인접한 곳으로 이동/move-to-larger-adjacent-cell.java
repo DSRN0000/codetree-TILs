@@ -13,15 +13,16 @@ public class Main {
         - 이동 가능? / 한다면 어디로?
         - 이동
 */
-    private static int n, x, y;
+    private static int n;
+    private static int x, y;
     private static int[][] arr;
     private static ArrayList<Integer> arrList = new ArrayList<>();
     
-    private static int[] dx = new int[]{1, -1, 0, 0};
+    private static int[] dx = new int[]{-1, 1, 0, 0};
     private static int[] dy = new int[]{0, 0, -1, 1};
 
     private static boolean isRange(int nx, int ny) {
-        return (1 <= nx && nx < n && 1 <= ny && ny < n);
+        return (1 <= nx && nx <= n && 1 <= ny && ny <= n);
     }
 
     private static boolean canGo(int nx, int ny, int cnumber){
@@ -57,12 +58,13 @@ public class Main {
         }
         arrList.add(arr[x][y]);
         
-        while (true) {
+        while(true) {
             boolean b = move();
 
             if (!b) {
                 break;
             }
+
             arrList.add(arr[x][y]);
         }
 
