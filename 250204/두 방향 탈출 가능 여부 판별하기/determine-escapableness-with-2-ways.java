@@ -39,7 +39,6 @@ public class Main {
             int nx = x + dx[i];
             int ny = y + dy[i];
             if (canGo(nx, ny)) {
-                visited[nx][ny] = 1;
                 dfs(nx, ny);
             }
         }
