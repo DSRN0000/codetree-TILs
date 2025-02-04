@@ -10,8 +10,6 @@ import java.util.*;
 public class Main {
 
     private static int n, m;
-    private static int order = 1;
-    private static int[][] answer;
     private static int[][] grid;
     private static int[][] visited;
 
@@ -34,13 +32,14 @@ public class Main {
     private static void dfs(int x, int y) {
         int[] dx = new int[]{1, 0};
         int[] dy = new int[]{0, 1};
-        answer[x][y] = order++;
+
         visited[x][y] = 1;
 
         for (int i = 0; i < 2; i++) {
             int nx = x + dx[i];
             int ny = y + dy[i];
             if (canGo(nx, ny)) {
+                visited[nx][ny] = 1;
                 dfs(nx, ny);
             }
         }
@@ -52,7 +51,6 @@ public class Main {
         n = sc.nextInt();
         m = sc.nextInt();
 
-        answer = new int[n][m];
         grid = new int[n][m];
         visited = new int[n][m];
 
@@ -62,13 +60,8 @@ public class Main {
             }
         }
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                System.out.print(grid[i][j]);
-            }
-            System.out.println();
-        }
-
         dfs(0, 0);
+
+        System.out.println(visited[n - 1][n - 1]);
     }
 }
