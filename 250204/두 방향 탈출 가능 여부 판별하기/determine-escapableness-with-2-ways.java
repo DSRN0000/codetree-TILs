@@ -46,7 +46,6 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         n = sc.nextInt();
         m = sc.nextInt();
 
@@ -61,6 +60,6 @@ public class Main {
 
         dfs(0, 0);
 
-        System.out.println(visited[n - 1][n - 1]);
+        System.out.println(visited[n - 1][m - 1]);
     }
 }
