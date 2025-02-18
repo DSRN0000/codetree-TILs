@@ -32,7 +32,7 @@ public class Main {
             }
         }
 
-        if (dp[m] == Integer.MAX_VALUE) {
+        if (dp[m] == Integer.MAX_VALUE + 1) {
             System.out.println(-1);
         }
         else {
