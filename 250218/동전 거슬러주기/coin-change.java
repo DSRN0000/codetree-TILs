@@ -4,27 +4,28 @@ public class Main {
     public static int[] arr;
     public static int[] dp;
 
-    public static void initalize() {
+    public static void initialize() {
         for (int i = 0; i <= m; i++) {
             dp[i] = Integer.MAX_VALUE;
         }
         dp[0] = 0;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
         m = sc.nextInt();
-        arr = new int[n + 1];
+        arr = new int[n];
         dp = new int[m + 1];
 
-        initalize();
+        initialize();
 
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
 
         for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
+            for (int j = 0; j < n; j++) {
                 if (i >= arr[j]) {
                     dp[i] = Math.min(dp[i], dp[i - arr[j]] + 1);
                 }
@@ -34,7 +35,7 @@ public class Main {
         if (dp[m] == Integer.MAX_VALUE) {
             System.out.println(-1);
         }
-        else {
+        else if(dp[m] != Integer.MAX_VALUE) {
             System.out.println(dp[m]);
         }
     }
