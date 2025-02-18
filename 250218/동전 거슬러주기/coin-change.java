@@ -6,7 +6,7 @@ public class Main {
 
     public static void initialize() {
         for (int i = 0; i <= m; i++) {
-            dp[i] = 10001;
+            dp[i] = Integer.MAX_VALUE - 1;
         }
         dp[0] = 0;
     }
