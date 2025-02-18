@@ -15,17 +15,17 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
         m = sc.nextInt();
-        arr = new int[n];
+        arr = new int[n + 1];
         dp = new int[m + 1];
 
         initialize();
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             arr[i] = sc.nextInt();
         }
 
         for (int i = 1; i <= m; i++) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 1; j <= n; j++) {
                 if (i >= arr[j]) {
                     dp[i] = Math.min(dp[i], dp[i - arr[j]] + 1);
                 }
