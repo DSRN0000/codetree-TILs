@@ -6,7 +6,7 @@ public class Main {
 
     public static void initialize() {
         for (int i = 0; i <= m; i++) {
-            dp[i] = Integer.MAX_VALUE - 1;
+            dp[i] = 10001;
         }
         dp[0] = 0;
     }
@@ -32,7 +32,7 @@ public class Main {
             }
         }
 
-        if (dp[m] == Integer.MAX_VALUE + 1) {
+        if (dp[m] == 10001) {
             System.out.println(-1);
         }
         else {
