@@ -6,7 +6,7 @@ public class Main {
 
     public static void initialize() {
         for (int i = 0; i <= m; i++) {
-            dp[i] = 10001;
+            dp[i] = 10000;
         }
         dp[0] = 0;
     }
@@ -32,7 +32,7 @@ public class Main {
             }
         }
 
-        if (dp[m] == 10001) {
+        if (dp[m] == 10000) {
             System.out.println(-1);
         }
         else {
